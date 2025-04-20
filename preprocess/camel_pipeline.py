@@ -96,20 +96,20 @@ def enrich_services_with_texts(services_data):
     return services_data
 
 
-def extract_keywords_from_short_texts(services_data, top_n=2):
+def extract_keywords_from_short_texts(services_data, top_n=4):
     """
     Trains TF-IDF on 'full_text' of all services,
     then extracts top N keywords from each service's 'short_text'.
     """
     # Step 1: Fit TF-IDF on all full_texts
-    full_texts = [service["full_text"] for service in services_data]
+    full_texts = [" ".join(preprocess_text(service["full_text"])) for service in services_data]
     vectorizer = TfidfVectorizer()
     vectorizer.fit(full_texts)
     feature_names = vectorizer.get_feature_names_out()
 
     # Step 2: Extract keywords from each short_text
     for service in services_data:
-        short_text = service["short_text"]
+        short_text = " ".join(preprocess_text(service["short_text"]))
         tfidf_vector = vectorizer.transform([short_text])
         scores = tfidf_vector.toarray().flatten()
 
