@@ -164,7 +164,7 @@ def scrape_data():
                 all_groups_data.extend(group_data)  # Add the processed data for the group
 
         # Save the results as a JSON file
-        with open("questions_with_answers.json", "w", encoding="utf-8") as f:
+        with open("scraped_data.json", "w", encoding="utf-8") as f:
             json.dump(all_groups_data, f, ensure_ascii=False, indent=4)
 
         browser.close()  # Close the browser
