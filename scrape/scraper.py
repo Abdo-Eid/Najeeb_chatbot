@@ -1,175 +1,164 @@
-from playwright.sync_api import sync_playwright
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 import json
-import time
+from tqdm import tqdm
+import sys
+from typing import List, Dict, TypedDict, Optional
 
-# Function to extract text safely from a locator
-# This function ensures that if an error occurs, a default value is returned
-def extract_text(locator, default_value="لا يوجد"):
+# Define a TypedDict to represent the structure of a related service link
+class RelatedService(TypedDict):
+    text: str
+    link: str
+
+# Define a TypedDict to represent the structure of the scraped service data
+class ScrapedServiceData(TypedDict):
+    category: str
+    service_name: str
+    service_url: str
+    description: str
+    terms: List[str]
+    Documents: List[str]
+    related_servises: List[RelatedService]
+
+def extract_list_content(container: Optional[BeautifulSoup]) -> List[str]:
+    """
+    Extracts and cleans text from paragraph tags within a given BeautifulSoup container.
+    Removes leading hyphens and filters out empty strings.
+    Specifically handles the case where the content is just "لا يوجد" and returns an empty list.
+
+    Args:
+        container: The BeautifulSoup object representing the container element
+                   (e.g., an accordion details div).
+
+    Returns:
+        A list of cleaned strings extracted from paragraph tags, or an empty list
+        if the container is empty or contains only "لا يوجد".
+    """
+    if not container:
+        return []
+
+    # Extract text from each paragraph, clean it, and remove leading hyphens
+    items = [p.get_text(strip=True).lstrip('- \t\n') for p in container.select('p')]
+    # Filter out any empty strings that might result from cleaning
+    cleaned_items = [item for item in items if item]
+
+    # Check if the only item is "لا يوجد" and return an empty list in that case
+    if len(cleaned_items) == 1 and cleaned_items[0] == "لا يوجد":
+        return []
+
+    return cleaned_items
+
+def scrape_service_bs4(service_url: str, category: str) -> Optional[ScrapedServiceData]:
+    """
+    Scrapes a single service page using BeautifulSoup and extracts relevant data.
+
+    Args:
+        service_url: The URL of the service page to scrape.
+        category: The category the service belongs to (passed from the category scraper).
+
+    Returns:
+        A dictionary conforming to ScrapedServiceData containing the scraped data,
+        or None if an error occurred during fetching or parsing.
+    """
     try:
-        return locator.inner_text().strip()  # Return the inner text of the locator
+        # Fetch the HTML content of the service page
+        response = requests.get(service_url)
+        response.raise_for_status() # Raise an HTTPError for bad responses (4xx or 5xx)
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+        # Extract the main service name (the large heading)
+        service_name_tag = soup.select_one("div.MuiContainer-root.MuiContainer-maxWidthLg.css-1qsxih2 > h1")
+        service_name = service_name_tag.get_text(strip=True) if service_name_tag else ""
+
+        # Find all accordion sections and map their headings to their content details
+        accordion_sections: Dict[str, BeautifulSoup] = {}
+        for accordion in soup.select('div.MuiAccordion-root'):
+            summary = accordion.select_one('div.MuiAccordionSummary-content h2')
+            details = accordion.select_one('div.MuiAccordionDetails-root')
+            if summary and details:
+                heading_text = summary.get_text(strip=True)
+                accordion_sections[heading_text] = details
+
+        # Extract Description from the corresponding accordion section
+        description_container = accordion_sections.get("وصف الخدمة")
+        description = description_container.get_text("\n", strip=True) if description_container else ""
+
+        # Extract Terms using the helper function
+        terms_container = accordion_sections.get("شروط و أحكام الخدمة")
+        terms = extract_list_content(terms_container)
+
+        # Extract Required Documents using the helper function
+        documents_container = accordion_sections.get("المستندات المطلوبة")
+        documents = extract_list_content(documents_container)
+
+
+        # Extract Related Services from the corresponding accordion section
+        related_services: List[RelatedService] = []
+        related_services_container = accordion_sections.get("خدمات مشابهة")
+        if related_services_container:
+            related_links = related_services_container.select("a")
+            for link in related_links:
+                text = link.get_text(strip=True)
+                href = link.get("href")
+                if href:
+                    # Construct the full URL for related services
+                    full_link = urljoin("https://digital.gov.eg/", href)
+                    related_services.append({
+                        "text": text,
+                        "link": full_link
+                    })
+
+        # Return the structured scraped data
+        return ScrapedServiceData(
+            category=category,
+            service_name=service_name,
+            service_url=service_url,
+            description=description,
+            terms=terms,
+            Documents=documents,
+            related_servises=related_services
+        )
+
+    except requests.exceptions.RequestException as e:
+        # Log HTTP errors to standard error
+        print(f"❌ HTTP Error scraping {service_url}: {e}", file=sys.stderr)
+        return None
     except Exception as e:
-        print(f"Error extracting text: {e}")  # Print error if extraction fails
-        return default_value  # Return the default value if extraction fails
+        # Log any other scraping errors to standard error
+        print(f"❌ Error scraping {service_url}: {e}", file=sys.stderr)
+        return None
 
-
-
-
-# Function to process each group on the webpage
-# This function handles opening the group, waiting for the questions, and processing them
-def process_group(page, group_index):
-    print(f"\n➡️ Opening group {group_index}...")
+# Main execution block
+if __name__ == "__main__":
     try:
-        # Find and click the group button
-        group_button = page.locator(f'//html/body/main/div[3]/div/div[2]/div[3]/div/button[{group_index}]')
-        group_button.click()
+        # Load the service URLs grouped by category from the pre-scraped JSON
+        with open("services_by_category.json", "r", encoding="utf-8") as f:
+            services_by_category = json.load(f)
 
-        # Wait for the questions in the group to load
-        try:
-            page.wait_for_selector(f'//html/body/main/div[3]/div/div[3]/div/a', timeout=5000)  # Increased timeout to 5 seconds
-        except Exception as e:
-            print(f"Error: Unable to load questions for group {group_index}. {e}")
-            return None  # Return None if questions fail to load
+        all_data: List[ScrapedServiceData] = []
+        # Calculate the total number of services for the progress bar
+        total_services = sum(len(services) for services in services_by_category.values())
 
-        time.sleep(2)  # Wait for questions to load
+        # Iterate through categories and services, scraping each service page
+        with tqdm(total=total_services, desc="Scraping Services") as pbar:
+            for category, services in services_by_category.items():
+                for service in services:
+                    data = scrape_service_bs4(service["url"], category)
+                    if data:
+                        all_data.append(data)
+                    # Update the progress bar after processing each service
+                    pbar.update(1)
 
-        # Extract the group's name
-        group_name = extract_text(group_button)
-        group_data = []
+        # Save the collected data to a JSON file
+        with open("scraped_services_data.json", "w", encoding="utf-8") as f:
+            json.dump(all_data, f, ensure_ascii=False, indent=4)
 
-        # Count the total number of questions in this group
-        total_questions = len(page.query_selector_all(f'//html/body/main/div[3]/div/div[3]/div/a'))
-        if total_questions == 0:
-            print(f"⚠️ No questions found in group {group_index}. Skipping group.")
-            return None  # Return None if there are no questions in the group
+        print("\n✅ Data saved to scraped_services_data.json")
 
-        # Process each question in the group
-        for question_index in range(1, total_questions + 1):
-            question_data = process_question(page, group_index, question_index, group_name)
-            if question_data:
-                group_data.append(question_data)
-
-        return group_data  # Return the processed data for this group
-
+    except FileNotFoundError:
+        # Handle the case where the input file is not found
+        print("Error: services_by_category.json not found. Please run the first script to generate it.", file=sys.stderr)
     except Exception as e:
-        print(f"Error processing group {group_index}: {e}")
-        return None  # Return None if an error occurs while processing the group
-
-
-
-
-
-
-# Function to process each question in a group
-# This function handles extracting question details, such as text, description, and answer
-def process_question(page, group_index, question_index, group_name):
-    question_xpath = f'/html/body/main/div[3]/div/div[3]/div[{question_index}]/a/p[1]'
-    description_xpath = f'/html/body/main/div[3]/div/div[3]/div[{question_index}]/a/p[2]'
-
-    # Find and click the group button
-    group_button = page.locator(f'//html/body/main/div[3]/div/div[2]/div[3]/div/button[{group_index}]')
-    group_button.click()
-
-    # Wait for the question to become visible
-    question_block = page.locator(f'xpath={question_xpath}')
-    question_block.wait_for(state="visible", timeout=10000)
-
-    # Extract question text and description text using the helper function
-    question_text = extract_text(question_block)
-    description_block = page.locator(f'xpath={description_xpath}')
-    description_text = extract_text(description_block)
-
-    # Click the question to open the answer page
-    question_block.click()
-    
-    # Extract the answer text using the helper function
-    answer_text = extract_answer(page)
-
-    # Extract the required documents and related services
-    required_docs_text = extract_text(page.locator('xpath=/html/body/div[2]/div/div[2]/div[1]/div[2]/div/div/div/div'))
-    related_services = extract_related_services(page)
-
-    service_url = page.url  # Get the URL of the service page
-
-    page.go_back()  # Go back to the main page
-    time.sleep(2)  # Wait for the page to load before continuing
-
-    print(f"🔄 Processed question {question_index} in group '{group_name}'...")
-
-    # Return a dictionary containing the question and related details
-    return {
-        "category": group_name,
-        "service_name": question_text,
-        "service_url": service_url,
-        "description": description_text,
-        "terms": answer_text.split(r"/n/n"),
-        "Documents": required_docs_text,
-        "related_servises": related_services
-    }
-
-
-# Function to extract related services and their links
-def extract_related_services(page):
-    # Initialize an empty list to store the extracted services and links
-    related_services = []
-
-    # Find all <a> tags within the "my-3" class (where services are listed)
-    service_elements = page.query_selector_all('div.MuiAccordionDetails-root a')
-
-    # Loop through each service element to extract the text and link
-    for service in service_elements:
-        service_text = extract_text(service)  # Extract the text of the service
-        service_link = service.get_attribute('href')  # Extract the link (URL) associated with the service
-        
-        # Append the extracted data to the list
-        related_services.append({
-            "text": service_text,
-            "link": "https://digital.gov.eg/"+service_link
-        })
-
-    return related_services  # Return the list of related services with their links
-
-
-
-
-# Function to extract the answer text from the answer page
-# This function handles waiting for the answer to load and extracting its content
-def extract_answer(page):
-    try:
-        # Wait for the answer section to load
-        page.locator('xpath=/html/body/div[2]/div/div[1]/div[2]/div[2]/div/div/div/div').wait_for(timeout=5000)
-        return page.locator('xpath=/html/body/div[2]/div/div[1]/div[2]/div[2]/div/div/div/div').inner_text().strip()
-    except Exception as e:
-        print(f"Error extracting answer: {e}")
-        return "لا يوجد"  # Return a default value if the answer cannot be extracted
-
-
-
-# Main function to run the scraper
-# This function starts the scraping process, handles the browser setup, and saves the results to a file
-def scrape_data():
-    url = "https://digital.gov.eg/"
-    all_groups_data = []  # List to store the extracted data
-
-    with sync_playwright() as p:
-        # Launch the browser and navigate to the URL
-        browser = p.chromium.launch(headless=True)  # Set headless to True for background operation
-        page = browser.new_page()
-        page.goto(url)
-        page.wait_for_selector(".logo-spin", state="detached")  # Wait for the page to load
-
-        # Loop over groups to process each one
-        for group_index in range(1, 24):  # Loop over 23 groups
-            group_data = process_group(page, group_index)
-            if group_data:
-                all_groups_data.extend(group_data)  # Add the processed data for the group
-
-        # Save the results as a JSON file
-        with open("scraped_data.json", "w", encoding="utf-8") as f:
-            json.dump(all_groups_data, f, ensure_ascii=False, indent=4)
-
-        browser.close()  # Close the browser
-
-
-
-# Run the scraper function
-scrape_data()
+        # Handle any unexpected errors during the main process
+        print(f"An error occurred during processing: {e}", file=sys.stderr)
