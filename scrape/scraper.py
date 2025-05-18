@@ -44,7 +44,7 @@ def extract_list_content(container: Optional[BeautifulSoup]) -> List[str]:
     cleaned_items = [item for item in items if item]
 
     # Check if the only item is "لا يوجد" and return an empty list in that case
-    if len(cleaned_items) == 1 and cleaned_items[0] == "لا يوجد":
+    if len(cleaned_items) == 1 and (cleaned_items[0] == "لا يوجد" or cleaned_items[0] =="لا يوجد."):
         return []
 
     return cleaned_items
