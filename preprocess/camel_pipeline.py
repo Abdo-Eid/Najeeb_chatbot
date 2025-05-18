@@ -83,11 +83,8 @@ def enrich_services_with_texts(services_data):
         terms = " ".join(service.get("terms", []))
         documents = service.get("Documents", "")
 
-        # إذا المستندات مش "لا يوجد"، نضيفها للنص
-        if documents.strip() != "لا يوجد":
-            full_text = f"{category} {name} {desc} {terms} {documents}"
-        else:
-            full_text = f"{category} {name} {desc} {terms}"
+        full_text = f"{category} {name} {desc} {terms} {documents}"
+       
 
         # نحفظ النصوص
         service["full_text"] = full_text.strip()
@@ -96,27 +93,24 @@ def enrich_services_with_texts(services_data):
     return services_data
 
 
-def extract_keywords_from_short_texts(services_data, top_n=4):
+def extract_keywords_from_short_texts_with_vectorizer(services_data, top_n=4):
     """
     Trains TF-IDF on 'full_text' of all services,
     then extracts top N keywords from each service's 'short_text'.
+    Returns: updated services_data and the fitted TF-IDF vectorizer.
     """
-    # Step 1: Fit TF-IDF on all full_texts
     full_texts = [" ".join(preprocess_text(service["full_text"])) for service in services_data]
     vectorizer = TfidfVectorizer()
     vectorizer.fit(full_texts)
     feature_names = vectorizer.get_feature_names_out()
 
-    # Step 2: Extract keywords from each short_text
     for service in services_data:
         short_text = " ".join(preprocess_text(service["short_text"]))
         tfidf_vector = vectorizer.transform([short_text])
         scores = tfidf_vector.toarray().flatten()
 
-        # Get top N keyword indices
         top_indices = np.argsort(scores)[-top_n:][::-1]
         keywords = [feature_names[i] for i in top_indices if scores[i] > 0]
-
         service["keywords"] = keywords
 
-    return services_data
+    return services_data, vectorizer
