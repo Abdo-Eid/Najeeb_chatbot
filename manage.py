@@ -18,6 +18,13 @@ def preprocess(args=None):
     from preprocessing.preprocess import preprocess
     preprocess()
 
+def run_pipeline(args=None):
+    from scraping.get_services_urls import scrape_all_categories
+    from scraping.scraper import scrape_all_services
+    from preprocessing.preprocess import preprocess
+    scrape_all_categories()
+    scrape_all_services()
+    preprocess()
 
 def run_app(args=None):
     from chatbot.app import app
@@ -32,6 +39,7 @@ def main():
     subparsers.add_parser("scrape_url", help="get all services URLs grouped by category.")
     subparsers.add_parser("scrape_services", help="Scrape all services.")
     subparsers.add_parser("preprocess", help="Preprocess data.")
+    subparsers.add_parser("run_pipeline", help="scrape then preprocess.")
 
     # Add run_app command with --debug flag
     run_app_parser = subparsers.add_parser("run_app", help="Run the Flask app.")
@@ -49,6 +57,8 @@ def main():
         scrape_services(args)
     elif args.command == "preprocess":
         preprocess(args)
+    elif args.command == "run_pipeline":
+        run_pipeline(args)
     elif args.command == "run_app":
         run_app(args)
 
