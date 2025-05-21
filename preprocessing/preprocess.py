@@ -1,17 +1,54 @@
 from collections import defaultdict
 import re
 from typing import List
-from camel_tools.tokenizers.word import simple_word_tokenize
-from camel_tools.utils.normalize import normalize_unicode, normalize_alef_maksura_ar, normalize_alef_ar, normalize_teh_marbuta_ar
 import numpy as np
 from .stopwordsallforms import STOPWORDS
-from camel_tools.utils.dediac import dediac_ar
 from sklearn.feature_extraction.text import TfidfVectorizer
 from scraping.scraper import ScrapedServiceData
 
 class EnrichedServiceData(ScrapedServiceData, total=False):
     full_text: str
     short_text: str
+
+
+# ============================= removing camel-tool from production code for it's big dependancy =======================
+
+import re
+
+def dediac_ar(text: str) -> str:
+    """
+    Removes Arabic diacritics from the text.
+    """
+    arabic_diacritics = re.compile(r'[\u0610-\u061A\u064B-\u065F\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED]')
+    return re.sub(arabic_diacritics, '', text)
+
+def normalize_unicode(text: str) -> str:
+    """
+    Normalizes common Unicode variations (basic NFC normalization).
+    """
+    import unicodedata
+    return unicodedata.normalize('NFC', text)
+
+def normalize_alef_ar(text: str) -> str:
+    """
+    Converts أ, إ, and آ to ا.
+    """
+    return re.sub(r'[إأآ]', 'ا', text)
+
+def normalize_alef_maksura_ar(text: str) -> str:
+    """
+    Converts ى to ي.
+    """
+    return text.replace('ى', 'ي')
+
+def normalize_teh_marbuta_ar(text: str) -> str:
+    """
+    Converts ة to ه.
+    """
+    return text.replace('ة', 'ه')
+
+def simple_word_tokenize(text):
+    return re.findall(r'\b\w+\b', text)
 
 def norm(text: str) -> str:
     """
