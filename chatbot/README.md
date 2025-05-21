@@ -1,26 +1,24 @@
-```bash
-pip install flask flask-cors
+# Najeeb Chatbot - Egypt Digital Portal
 
-```
+An intelligent assistant that answers your questions about Egypt's Digital Portal services using Flask and TF-IDF.
 
-- make function that take query and 
-    - if it greeting and bye use the rule based chatbot
-    - if real query can the tf-idf model and get the top 1 response will git the index of that service, so i can get the data from it
-    - if the response is so far from the nearest vector (similarity) say don't know
+---
 
-Here’s a clean and complete `README.md` file for your Flask API project:
+## 🚀 How to Run (Windows)
 
-### 🚀 How to Run the API (Windows)
-
-#### 1. 📦 Install dependencies
-
-In the project directory, open Command Prompt or PowerShell and run:
+### 1. Install requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 2. ▶️ Start the Flask server
+Or manually:
+
+```bash
+pip install flask flask-cors
+```
+
+### 2. Start the server
 
 ```bash
 python app.py
@@ -34,52 +32,63 @@ You should see:
 
 ---
 
-### 🔗 API Endpoint
+## 🔗 API Endpoint
 
-#### `POST /chat`
+### `POST /chat`
 
 **Request:**
 
-* Content-Type: `application/json`
-* JSON payload:
+-   Content-Type: `application/json`
+-   Example request:
 
 ```json
 {
-  "message": "اهلا"
+    "message": "hello"
 }
 ```
 
 **Response:**
 
-* JSON:
+-   Example response:
 
 ```json
 {
-  "response": "ازيك عامل اي"
+    "response": {
+        "type": "rule",
+        "response": "How are you?"
+    }
 }
 ```
 
 ---
 
-### 🧪 Example Testing
+## 🧪 Example Testing
 
-#### ✅ Using curl:
+### Using Python (requests):
 
 ```python
 import requests
 
-response = requests.post("http://127.0.0.1:5000/chat", json={"message": "السلام عليكم"})
+response = requests.post("http://127.0.0.1:5000/chat", json={"message": "hello"})
 print(response.json())
 ```
 
-#### ✅ Using Postman:
+### Using Postman:
 
-* Method: `POST`
-* URL: `http://127.0.0.1:5000/chat`
-* Body → Raw → JSON:
+-   Method: `POST`
+-   URL: `http://127.0.0.1:5000/chat`
+-   Body → Raw → JSON:
 
 ```json
 {
-  "message": "باي"
+    "message": "bye"
 }
 ```
+
+---
+
+## 🧠 How does the chatbot work?
+
+-   If the message is a greeting or farewell: uses rule-based responses.
+-   If it's a real query: uses the TF-IDF model and returns the best matching service.
+-   If no close answer is found (low similarity): replies that it doesn't know the answer.

@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, send_file, send_from_directory
 from flask_cors import CORS
-from bot import get_bot_response
+from .bot import get_bot_response
 
 app = Flask(__name__, static_folder=".")
 CORS(app)
@@ -22,12 +22,12 @@ def chat():
     # Extract the "message" field from the JSON data (default to empty string if not provided)
     message = data.get("message", "")
     
-    # Generate a response using the bot logic (imported from rule_bot)
-    response = get_bot_response(message)
+    debug = app.config.get("DEBUG", False)  # Get debug flag from config
+    response = get_bot_response(message, debug=debug)
     
     # Return the bot's response as a JSON object
     return jsonify({"response": response})
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)

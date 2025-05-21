@@ -5,6 +5,8 @@ requires-python = ">=3.10"
 dependencies = [
     "beautifulsoup4>=4.13.4",
     "camel-tools>=1.5.6",
+    "flask>=3.1.1",
+    "flask-cors>=6.0.0",
     "ipykernel>=6.29.5",
     "playwright>=1.52.0",
     "requests>=2.32.3",

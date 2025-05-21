@@ -1,0 +1,662 @@
+{
+    "التموين": [
+        {
+            "title": "استمارة تحديث بيانات المواطن",
+            "url": "https://digital.gov.eg/categories/terms/استمارة-تحديث-بيانات-المواطن"
+        },
+        {
+            "title": "تفعيل بطاقة تموين",
+            "url": "https://digital.gov.eg/categories/terms/تفعيل-بطاقة-تموين"
+        },
+        {
+            "title": "إصدار بدل تالف أو فاقد لبطاقة تموين",
+            "url": "https://digital.gov.eg/categories/terms/إصدار-بدل-تالف-أو-فاقد-لبطاقة-تموين"
+        },
+        {
+            "title": "نقل من محافظة إلى أخرى",
+            "url": "https://digital.gov.eg/categories/terms/نقل-من-محافظة-إلى-أخرى"
+        },
+        {
+            "title": "فصل نفسي",
+            "url": "https://digital.gov.eg/categories/terms/فصل-نفسي"
+        },
+        {
+            "title": "ضم أفراد أسرتى",
+            "url": "https://digital.gov.eg/categories/terms/ضم-أفراد-أسرتى"
+        },
+        {
+            "title": "الاستعلام عن صرف",
+            "url": "https://digital.gov.eg/categories/terms/الاستعلام-عن-صرف"
+        }
+    ],
+    "التوثيق": [
+        {
+            "title": "استعلام عن سريان محرر مُميكن",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-سريان-محرر-مميكن"
+        },
+        {
+            "title": "تحرير توكيل عام في القضايا (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-عام-في-القضايا-عن-نفسه"
+        },
+        {
+            "title": "تحرير إقرار بالشطب (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-بالشطب-عن-نفسه"
+        },
+        {
+            "title": "طلب صورة رسمية من محرر مميكن",
+            "url": "https://digital.gov.eg/categories/terms/طلب-صورة-رسمية-من-محرر-مميكن"
+        },
+        {
+            "title": "طلب شهادة من محرر عرفي مصدق علي التوقيعات فيه مميكن",
+            "url": "https://digital.gov.eg/categories/terms/طلب-شهادة-من-محرر-عرفي-مصدق-علي-التوقيعات-فيه-مميكن"
+        },
+        {
+            "title": "طلب شهادة من محرر عرفي مميكن ثابت التاريخ",
+            "url": "https://digital.gov.eg/categories/terms/طلب-شهادة-من-محرر-عرفي-مميكن-ثابت-التاريخ"
+        },
+        {
+            "title": "تحرير إقرار بعدم وجود تعديلات علي البيانات المساحية (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-بعدم-وجود-تعديلات-على-البيانات-المساحية-عن-نفسه"
+        },
+        {
+            "title": "تحرير إقرار رسمي (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-اقرار-رسمي-عن-نفسه"
+        },
+        {
+            "title": "تحرير إقرار تصحيح موثق (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-تصحيح-موثق-عن-نفسه"
+        },
+        {
+            "title": "تحرير توكيل عام رسمي (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-عام-رسمي-عن-نفسه"
+        },
+        {
+            "title": "تحرير توكيل رسمي شامل (بنوك-عام) (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-رسمي-شامل-بنوك-عام-عن-نفسه"
+        },
+        {
+            "title": "تحرير توكيل في الأمور الزوجية (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-في-الأمور-الزوجية-عن-نفسه"
+        },
+        {
+            "title": "اكتب محررك",
+            "url": "https://digital.gov.eg/categories/terms/اكتب-محررك-توثيق"
+        },
+        {
+            "title": "حجز ميعاد",
+            "url": "https://digital.gov.eg/categories/terms/حجز-ميعاد-توثيق"
+        },
+        {
+            "title": "معاملاتي المميكنة",
+            "url": "https://digital.gov.eg/categories/terms/معاملاتي-المميكنة"
+        },
+        {
+            "title": "استعلام عن كثافة فروع المكاتب المميكنة",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-كثافة-فروع-المكاتب-المميكنة"
+        },
+        {
+            "title": "تحرير توكيل عام في القضايا (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-عام-في-القضايا-بصفة"
+        },
+        {
+            "title": "تحرير توكيل عام رسمي (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-عام-رسمي-بصفة"
+        },
+        {
+            "title": "تحرير توكيل رسمي شامل (بنوك-عام) (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-رسمي-شامل-بنوك-عام-بصفة"
+        },
+        {
+            "title": "تحرير توكيل في الأمور الزوجية (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-في-الأمور-الزوجية-بصفة"
+        },
+        {
+            "title": "تحرير إقرار بالشطب (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-بالشطب-بصفة"
+        },
+        {
+            "title": "تحرير إقرار تصحيح موثق (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-تصحيح-موثق-بصفة"
+        },
+        {
+            "title": "تحرير إقرار بعدم وجود تعديلات علي البيانات المساحية (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-بعدم-وجود-تعديلات-على-البيانات-المساحية-بصفة"
+        },
+        {
+            "title": "تحرير إقرار رسمي (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-رسمى-بصفة"
+        },
+        {
+            "title": "تحرير عقد بيع مركبة",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-عقد-بيع-مركبة"
+        },
+        {
+            "title": "تحرير توكيل بيع مركبة",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-بيع-مركبة"
+        },
+        {
+            "title": "تحرير توكيل إدارة مركبة",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-إدارة-مركبة"
+        },
+        {
+            "title": "تحرير عقد بيع دراجة نارية",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-عقد-بيع-دراجة-نارية"
+        },
+        {
+            "title": "تحرير توكيل بيع دراجة نارية",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-بيع-دراجة-نارية"
+        },
+        {
+            "title": "تحرير توكيل إدارة دراجة نارية",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-إدارة-دراجة-نارية"
+        },
+        {
+            "title": "تحرير توكيل خاص في قضية (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-خاص-في-قضية-بنفسه"
+        },
+        {
+            "title": "تحرير توكيل خاص في قضية (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-خاص-في-قضية-بصفة"
+        },
+        {
+            "title": "تحرير توكيل بالمعاش (عن نفسه)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-بالمعاش-بنفسه"
+        },
+        {
+            "title": "تحرير توكيل بالمعاش (بصفة)",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-بالمعاش-بصفة"
+        },
+        {
+            "title": "تحرير إقرار رسمي بسفر الزوجة",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-رسمي-بسفر-الزوجة"
+        },
+        {
+            "title": "تحرير إقرار رسمي بسفر الإبن",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-رسمي-بسفر-الإبن"
+        },
+        {
+            "title": "تحرير إقرار صلح في مشاجرة/ضرب",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-صلح-في-مشاجرة-ضرب"
+        },
+        {
+            "title": "تحرير إقرار تصحيح رقم موتور سيارة",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-إقرار-تصحيح-رقم-موتور-سيارة"
+        }
+    ],
+    "السجل التجاري": [
+        {
+            "title": "طلب مستخرج سجل تجاري",
+            "url": "https://digital.gov.eg/categories/terms/طلب-مستخرج-سجل-تجاري"
+        },
+        {
+            "title": "استعلام عن سجل تجاري",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-سجل-تجاري"
+        },
+        {
+            "title": "طلب تجديد سجل تجاري",
+            "url": "https://digital.gov.eg/categories/terms/طلب-تجديد-سجل-تجاري"
+        },
+        {
+            "title": "طلب شهادة بيانات",
+            "url": "https://digital.gov.eg/categories/terms/طلب-شهادة-بيانات"
+        },
+        {
+            "title": "تحديث بيانات الشركة",
+            "url": "https://digital.gov.eg/categories/terms/تحديث-بيانات-الشركة"
+        },
+        {
+            "title": "إضافة منشأة مسجله (غير مدرجه داخل شركاتى)",
+            "url": "https://digital.gov.eg/categories/terms/إضافة-منشأة-مسجل-غير-مدرجه-داخل-شركاتى"
+        },
+        {
+            "title": "الاستعلام عن المكاتب",
+            "url": "https://digital.gov.eg/categories/terms/الاستعلام-عن-المكاتب"
+        },
+        {
+            "title": "حجز ميعاد",
+            "url": "https://digital.gov.eg/categories/terms/حجز-ميعاد-سجل-تجاري"
+        },
+        {
+            "title": "استدلال عن سجل تجاري",
+            "url": "https://digital.gov.eg/categories/terms/استدلال-عن-سجل-تجاري"
+        },
+        {
+            "title": "طلب مستخرج سجل تجاري للاعتماد من وزارة الخارجية",
+            "url": "https://digital.gov.eg/categories/terms/طلب-مستخرج-سجل-تجاري-للاعتماد-وزارة-الخارجية"
+        },
+        {
+            "title": "حجوزاتي",
+            "url": "https://digital.gov.eg/categories/terms/حجوزاتي"
+        },
+        {
+            "title": "طلب موافقة فحص أمنى",
+            "url": "https://digital.gov.eg/categories/terms/طلب-موافقة-فحص-أمنى"
+        },
+        {
+            "title": "طلب شهادة سلبية",
+            "url": "https://digital.gov.eg/categories/terms/طلب-شهادة-سلبية"
+        },
+        {
+            "title": "طلب قيد أفراد",
+            "url": "https://digital.gov.eg/categories/terms/طلب-قيد-أفراد"
+        },
+        {
+            "title": "طلب انشاء فرع لمنشأة فردية (محل فرعى)",
+            "url": "https://digital.gov.eg/categories/terms/طلب-إنشاء-فرع-لمنشأة-فردية"
+        },
+        {
+            "title": "طلب إلغاء فرع لمنشأة فردية",
+            "url": "https://digital.gov.eg/categories/terms/طلب-إلغاء-فرع-لمنشأة-فردية"
+        },
+        {
+            "title": "طلب محو منشأة فردية",
+            "url": "https://digital.gov.eg/categories/terms/طلب-محو-منشأة-فردية"
+        },
+        {
+            "title": "طلب نقل قيد سجل تجاري داخل المحافظة",
+            "url": "https://digital.gov.eg/categories/terms/طلب-نقل-قيد-سجل-تجاري-داخل-المحافظة"
+        },
+        {
+            "title": "طلب المقاصة",
+            "url": "https://digital.gov.eg/categories/terms/طلب-المقاصة"
+        },
+        {
+            "title": "طلب تسجيل وكيل مفوض",
+            "url": "https://digital.gov.eg/categories/terms/طلب-تسجيل-وكيل-مفوض"
+        }
+    ],
+    "التأمين الإجتماعى": [
+        {
+            "title": "استعلام عن الرقم التأميني",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-الرقم-التأميني"
+        },
+        {
+            "title": "الاستعلام عن أخر مدة تأمينية",
+            "url": "https://digital.gov.eg/categories/terms/الاستعلام-عن-أخر-مدة-تأمينية"
+        },
+        {
+            "title": "الاستعلام عن مدد الاشتراك والأجور الخاصة بكل مدة في التأمين الاجتماعي",
+            "url": "https://digital.gov.eg/categories/terms/الاستعلام-عن-مدد-الاشتراك-و-الاجور-الخاصة"
+        },
+        {
+            "title": "الاستعلام عن الإستقطاعات الخاصة بالمؤمن عليه",
+            "url": "https://digital.gov.eg/categories/terms/الاستعلام-عن-الإستقطاعات-الخاصة-بالمؤمن-عليه"
+        },
+        {
+            "title": "استعلام عن البيانات الأساسية لملف المعاش",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-البيانات-الاساسية-لملف-المعاش"
+        },
+        {
+            "title": "الاستعلام عن المعاش المنصرف للقائم بالصرف",
+            "url": "https://digital.gov.eg/categories/terms/الاستعلام-عن-المعاش-المنصرف-للقائم-بالصرف"
+        },
+        {
+            "title": "استعلام عن الإستقطاعات للقائمين بالصرف",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-الإستقطاعات-للقائمين-بالصرف"
+        },
+        {
+            "title": "استعراض المعاشات المستحقة للمستفيد",
+            "url": "https://digital.gov.eg/categories/terms/استعراض-المعاشات-المستحقة-للمستفيد"
+        },
+        {
+            "title": "استعلام عن بيانات السيارة",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-بيانات-السيارة"
+        },
+        {
+            "title": "الاستعلام عن كشف حساب السيارة",
+            "url": "https://digital.gov.eg/categories/terms/الاستعلام-عن-كشف-حساب-السيارة"
+        },
+        {
+            "title": "الاستعلام عن رصيد العاملين بالخارج",
+            "url": "https://digital.gov.eg/categories/terms/الاستعلام-عن-رصيد-العاملين-بالخارج"
+        },
+        {
+            "title": "استعلام عن سدادات العاملين بالخارج",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-سدادات-العاملين-بالخارج"
+        },
+        {
+            "title": "استعلام عن العمليات المستمرة التابعة للمقاول",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-العمليات-المستمرة-التابعة-للمقاول"
+        }
+    ],
+    "مركباتى": [
+        {
+            "title": "تَظلُم على مخالفات رخص مركبات",
+            "url": "https://digital.gov.eg/categories/terms/تظلم-على-مخالفات-رخص-مركبات"
+        },
+        {
+            "title": "سداد مخالفات رخص المركبات واستخراج شهادة براءة الذمة",
+            "url": "https://digital.gov.eg/categories/terms/خدمة-سداد-مخالفات"
+        },
+        {
+            "title": "تجديد رخصة مركبة",
+            "url": "https://digital.gov.eg/categories/terms/تجديد-رخصة-مركبة"
+        },
+        {
+            "title": "بدل فاقد رخصة مركبة",
+            "url": "https://digital.gov.eg/categories/terms/بدل-فاقد-رخصة-مركبة"
+        },
+        {
+            "title": "بدل تالف رخصة مركبة",
+            "url": "https://digital.gov.eg/categories/terms/اصدار-بدل-تالف-رخصة-مركبة"
+        },
+        {
+            "title": "تحرير عقد بيع مركبة",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-عقد-بيع-مركبة"
+        },
+        {
+            "title": "تحرير توكيل بيع مركبة",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-بيع-مركبة"
+        },
+        {
+            "title": "تحرير توكيل إدارة مركبة",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-إدارة-مركبة"
+        },
+        {
+            "title": "استعلام عن مخالفات رخصة مركبة",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-مخالفات-رخصة-مركبة"
+        },
+        {
+            "title": "التأكد من صحة بيانات مركبة",
+            "url": "https://digital.gov.eg/categories/terms/التأكد-من-صحة-بيانات-مركبة"
+        },
+        {
+            "title": "سداد مخالفات مركبة لمالك آخر",
+            "url": "https://digital.gov.eg/categories/terms/سداد-مخالفات-مركبة-لمالك-أخر"
+        },
+        {
+            "title": "تحرير عقد بيع دراجة نارية",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-عقد-بيع-دراجة-نارية"
+        },
+        {
+            "title": "تحرير توكيل بيع دراجة نارية",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-بيع-دراجة-نارية"
+        },
+        {
+            "title": "تحرير توكيل إدارة دراجة نارية",
+            "url": "https://digital.gov.eg/categories/terms/تحرير-توكيل-إدارة-دراجة-نارية"
+        }
+    ],
+    "رخصى": [
+        {
+            "title": "استعلام عن مخالفات رخص القيادة",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-مخالفات-رخص-القيادة"
+        },
+        {
+            "title": "تظلُّم على مخالفات رخص القيادة",
+            "url": "https://digital.gov.eg/categories/terms/تظلم-على-مخالفات-رخص-القيادة"
+        },
+        {
+            "title": "سداد مخالفات رخص القيادة واستخراج شهادة براءة الذمة",
+            "url": "https://digital.gov.eg/categories/terms/سداد-مخالفات-رخص-القيادة"
+        },
+        {
+            "title": "إصدار بدل تالف رخصة قيادة",
+            "url": "https://digital.gov.eg/categories/terms/اصدار-بدل-تالف-رخصة-قيادة"
+        },
+        {
+            "title": "إصدار بدل فاقد رخصة قيادة",
+            "url": "https://digital.gov.eg/categories/terms/اصدار-بدل-فاقد-رخصة-قيادة"
+        },
+        {
+            "title": "سداد مخالفات رخص القيادة لمالك اخر",
+            "url": "https://digital.gov.eg/categories/terms/سداد-مخالفات-رخص-القيادة-لمالك-اخر"
+        }
+    ],
+    "المحاكم": [
+        {
+            "title": "تسجيل محامٍ",
+            "url": "https://digital.gov.eg/categories/terms/تسجيل-محامي"
+        },
+        {
+            "title": "إقامة دعوى مدنية",
+            "url": "https://digital.gov.eg/categories/terms/إقامة-دعوى-مدنية"
+        },
+        {
+            "title": "تحديث بيانات كارنية النقابة الخاص بالمحامي",
+            "url": "https://digital.gov.eg/categories/terms/تحديث-بيانات-كارنية-النقابة-الخاص-بالمحامي"
+        }
+    ],
+    "دار الإفتاء": [
+        {
+            "title": "طلب فتوى",
+            "url": "https://digital.gov.eg/categories/terms/طلب-فتوى"
+        }
+    ],
+    "الحالة الشخصية": [
+        {
+            "title": "مستخرج صورة رسمية من وثيقة زواج",
+            "url": "https://digital.gov.eg/categories/terms/مستخرج-صورة-رسمية-من-وثيقة-زواج"
+        },
+        {
+            "title": "مستخرج صورة رسمية من وثيقة زواج (صورة رسمية مصدق عليها)",
+            "url": "https://digital.gov.eg/categories/terms/مستخرج-صورة-رسمية-من-وثيقة-زواج-مصدق-عليها"
+        },
+        {
+            "title": "مستخرج صورة رسمية من وثيقة طلاق (صورة رسمية مصدق عليها)",
+            "url": "https://digital.gov.eg/categories/terms/مستخرج-صورة-رسمية-من-وثيقة-طلاق-مصدق-عليها"
+        },
+        {
+            "title": "مستخرج صورة رسمية من وثيقة طلاق",
+            "url": "https://digital.gov.eg/categories/terms/مستخرج-صورة-رسمية-من-وثيقة-طلاق"
+        },
+        {
+            "title": "مستخرج صورة رسمية من وثيقة زواج غير مسلمين",
+            "url": "https://digital.gov.eg/categories/terms/مستخرج-صورة-رسمية-من-وثيقة-زواج-غير-مسلمين"
+        },
+        {
+            "title": "مستخرج صورة رسمية من وثيقة تصادق",
+            "url": "https://digital.gov.eg/categories/terms/مستخرج-صورة-رسمية-من-وثيقة-تصادق"
+        },
+        {
+            "title": "مستخرج صورة رسمية من وثيقة مراجعة (صورة رسمية مصدق عليها)",
+            "url": "https://digital.gov.eg/categories/terms/مستخرج-صورة-رسمية-من-وثيقة-مراجعة-صورة-رسمية-مصدق-عليها"
+        },
+        {
+            "title": "مستخرج صورة رسمية من وثيقة تصادق (صورة رسمية مصدق عليها)",
+            "url": "https://digital.gov.eg/categories/terms/مستخرج-صورة-رسمية-من-وثيقة-تصادق-صورة-رسمية-مصدق-عليها"
+        },
+        {
+            "title": "مستخرج صورة رسمية من وثيقة مراجعة",
+            "url": "https://digital.gov.eg/categories/terms/مستخرج-صورة-رسمية-من-وثيقة-مراجعة"
+        },
+        {
+            "title": "مستخرج صورة رسمية من وثيقة زواج غير مسلمين (صورة رسمية مصدق عليها)",
+            "url": "https://digital.gov.eg/categories/terms/ مستخرج-صورة-من-وثيقة-زواج-غير-مسلمين"
+        }
+    ],
+    "الشهر العقاري": [
+        {
+            "title": "إستخراج صورة من عقد مُشهر",
+            "url": "https://digital.gov.eg/categories/terms/إستخراج-صورة-من-عقد-مشهر"
+        },
+        {
+            "title": "استخراج صورة من كتاب دورى",
+            "url": "https://digital.gov.eg/categories/terms/استخراج-صورة-من-كتاب-دورى"
+        },
+        {
+            "title": "استخراج صورة من منشور مالى",
+            "url": "https://digital.gov.eg/categories/terms/استخراج-صورة-من-منشور-مالى"
+        },
+        {
+            "title": "استخراج صورة من منشور فنى",
+            "url": "https://digital.gov.eg/categories/terms/استخراج-صورة-من-منشور-فنى"
+        },
+        {
+            "title": "استخراج شهادة تصرفات عقارية",
+            "url": "https://digital.gov.eg/categories/terms/استخراج-شهادة-تصرفات-عقارية"
+        },
+        {
+            "title": "ترجمة عقد مُشهر",
+            "url": "https://digital.gov.eg/categories/terms/ترجمة-عقد-مشهر"
+        }
+    ],
+    "الأحوال المدنية": [
+        {
+            "title": "بدل تالف بطاقة الرقم القومي",
+            "url": "https://digital.gov.eg/categories/terms/بدل-تالف-بطاقة-الرقم-القومي"
+        },
+        {
+            "title": "بدل فاقد بطاقة الرقم القومي",
+            "url": "https://digital.gov.eg/categories/terms/بدل-فاقد-بطاقة-الرقم-القومي"
+        },
+        {
+            "title": "شهادة الميلاد",
+            "url": "https://digital.gov.eg/categories/terms/شهادة-الميلاد"
+        },
+        {
+            "title": "اصدار شهادة وفاة مميكنة مطبوعة مسبقا",
+            "url": "https://digital.gov.eg/categories/terms/اصدار-شهادة-وفاة-مميكنة-مطبوعة-مسبقا"
+        },
+        {
+            "title": "إصدار قسيمة زواج مميكنة مطبوعة مسبقاً",
+            "url": "https://digital.gov.eg/categories/terms/إصدار-قسيمة-زواج-مميكنة-مطبوعة-مسبقا"
+        },
+        {
+            "title": "إصدار قسيمة طلاق مميكنة مطبوعة مسبقاً",
+            "url": "https://digital.gov.eg/categories/terms/إصدار-قسيمة-طلاق-مميكنة-مطبوعة-مسبقا"
+        },
+        {
+            "title": "اصدار شهادة ميلاد مميكنة لأول مرة",
+            "url": "https://digital.gov.eg/categories/terms/اصدار-شهادة-ميلاد-مميكنة-لأول-مرة"
+        }
+    ],
+    "القضايا": [
+        {
+            "title": "الاستعلام عن بيانات دعوى",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-بيانات-الدعوي"
+        },
+        {
+            "title": "الاستعلام عن حدوث استئناف",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-حدوث-استئناف"
+        },
+        {
+            "title": "الاستعلام عن المطالبات",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-مطالبات"
+        },
+        {
+            "title": "الاستعلام عن رول دعوى",
+            "url": "https://digital.gov.eg/categories/terms/استعلام-عن-رول-دعوى"
+        }
+    ],
+    "الأدلة الجنائية": [
+        {
+            "title": "إصدار صحيفة حالة جنائية مميكنة",
+            "url": "https://digital.gov.eg/categories/terms/إصدار-صحيفة-حالة-جنائية-مميكنة"
+        }
+    ],
+    "التأمين الصحي الشامل": [
+        {
+            "title": "تسجيل اسرة تأمينية جديدة",
+            "url": "https://digital.gov.eg/categories/terms/تسجيل-اسرة-تأمينية-جديدة"
+        },
+        {
+            "title": "منصة التواصل مع مستفيد التأمين الصحي الشامل",
+            "url": "https://digital.gov.eg/categories/terms/منصة-التواصل-مع-مستفيد-التأمين-الصحي-الشامل"
+        }
+    ],
+    "الزراعة": [
+        {
+            "title": "إستخراج موافقة فنية لمشروع ثروة حيوانية",
+            "url": "https://digital.gov.eg/categories/terms/إستخراج-موافقة-فنية-لمشروع-ثروة-حيوانية"
+        },
+        {
+            "title": "طلب ترخيص صوب لإنتاج شتلات الخضر",
+            "url": "https://digital.gov.eg/categories/terms/طلب-ترخيص-صوب-لإنتاج-شتلات-الخضر"
+        },
+        {
+            "title": "طلب إصدار تراخيص تشغيل مزارع الدواجن ومعامل التفريخ",
+            "url": "https://digital.gov.eg/categories/terms/طلب-إصدار-تراخيص-تشغيل-مزارع-الدواجن-ومعامل-التفريخ"
+        },
+        {
+            "title": "طلب استخراج تراخيص تشغيل مزارع الانتاج الحيواني",
+            "url": "https://digital.gov.eg/categories/terms/طلب-استخراج-تراخيص-تشغيل-مزارع-الانتاج-الحيواني"
+        },
+        {
+            "title": "إصدار ترخيص تشغيل مراكز إنتاج الألبان",
+            "url": "https://digital.gov.eg/categories/terms/إصدار-ترخيص-تشغيل-مراكز-إنتاج-الألبان"
+        },
+        {
+            "title": "طلب موافقة إحلال وتجديد مشروع الدواجن",
+            "url": "https://digital.gov.eg/categories/terms/طلب-موافقة-إحلال-وتجديد-مشروع-الدواجن"
+        },
+        {
+            "title": "طلب استخراج تراخيص مناحل و منتجاتها",
+            "url": "https://digital.gov.eg/categories/terms/طلب-استخراج-تراخيص-مناحل-و-منتجاتها"
+        },
+        {
+            "title": "طلب ترخيص مشتل لإنتاج شتلات الخضر",
+            "url": "https://digital.gov.eg/categories/terms/طلب-ترخيص-مشتل-لإنتاج-شتلات-الخضر"
+        },
+        {
+            "title": "طلب ترخيص مشتل لإنتاج شتلات الفراولة",
+            "url": "https://digital.gov.eg/categories/terms/طلب-ترخيص-مشتل-لإنتاج-شتلات-الفراولة"
+        },
+        {
+            "title": "طلب ترخيص انشاء حديقة فاكهة استهلاك شخصى",
+            "url": "https://digital.gov.eg/categories/terms/طلب-ترخيص-انشاء-حديقة-فاكهة-استهلاك-شخصى"
+        }
+    ],
+    "البريد المصري": [
+        {
+            "title": "تتبع شحنتك",
+            "url": "https://digital.gov.eg/categories/terms/تتبع-شحنتك"
+        },
+        {
+            "title": "احسب شحنتك",
+            "url": "https://digital.gov.eg/categories/terms/احسب-شحنتك"
+        },
+        {
+            "title": "الرقم البريدي",
+            "url": "https://digital.gov.eg/categories/terms/الرقم-البريدي"
+        },
+        {
+            "title": "أين تجدنا",
+            "url": "https://digital.gov.eg/categories/terms/أين-تجدنا"
+        }
+    ],
+    "الأوقاف": [
+        {
+            "title": "صك الأضحية",
+            "url": "https://digital.gov.eg/categories/terms/صك-الأضحية"
+        },
+        {
+            "title": "صك الإطعام",
+            "url": "https://digital.gov.eg/categories/terms/صك-الإطعام"
+        },
+        {
+            "title": "عمارة المساجد",
+            "url": "https://digital.gov.eg/categories/terms/عمارة-المساجد"
+        },
+        {
+            "title": "النذور",
+            "url": "https://digital.gov.eg/categories/terms/النذور"
+        }
+    ],
+    "أملاك الدولة": [
+        {
+            "title": "الاستعلام عن المديونيات",
+            "url": "https://digital.gov.eg/categories/terms/الاستعلام-عن-المديونيات"
+        }
+    ],
+    "المحاكم الاقتصادية": [
+        {
+            "title": "أستعلامات الدعاوى",
+            "url": "https://digital.gov.eg/categories/terms/أستعلامات-الدعاوى"
+        },
+        {
+            "title": "حاسبة الرسوم",
+            "url": "https://digital.gov.eg/categories/terms/حاسبه-الرسوم"
+        }
+    ],
+    "وزارة العمل": [
+        {
+            "title": "استخراج بدل لشهادة القيد",
+            "url": "https://digital.gov.eg/categories/terms/استخراج-بدل-لشهادة-القيد"
+        },
+        {
+            "title": "التحقق من صحة شهادة القيد",
+            "url": "https://digital.gov.eg/categories/terms/التحقق-من-صحة-شهادة-قيد"
+        }
+    ]
+}
